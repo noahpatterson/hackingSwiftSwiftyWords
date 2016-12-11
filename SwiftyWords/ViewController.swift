@@ -124,7 +124,7 @@ class ViewController: UIViewController {
         
         loadLevel()
         
-        for btn in activatedButtons {
+        for btn in letterButtons {
             btn.isHidden = false
         }
     }
