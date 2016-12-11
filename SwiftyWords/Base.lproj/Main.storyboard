@@ -185,11 +185,17 @@
                                 <rect key="frame" x="425" y="390" width="75" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="SUBMIT"/>
+                                <connections>
+                                    <action selector="submitTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="xH2-d8-GFk"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ym-b3-onS">
                                 <rect key="frame" x="525" y="390" width="75" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="CLEAR"/>
+                                <connections>
+                                    <action selector="clearTapped" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ops-WH-lKj"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tap letters to guess" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-BP-RnX">
                                 <rect key="frame" x="245" y="315" width="535" height="80"/>
@@ -222,6 +228,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
+                    <connections>
+                        <outlet property="answersLabel" destination="WNd-4n-u8c" id="orc-Y0-2Gz"/>
+                        <outlet property="cluesLabel" destination="LI7-tF-BRe" id="uSM-4C-l2O"/>
+                        <outlet property="currentAnswer" destination="Zap-BP-RnX" id="JNS-DW-r78"/>
+                        <outlet property="scoreLabel" destination="WCr-kV-JWl" id="H5L-ij-drE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
