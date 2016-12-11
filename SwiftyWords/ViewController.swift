@@ -42,15 +42,17 @@ class ViewController: UIViewController {
                 ac.addAction(UIAlertAction(title: "Let's Go!", style: .default, handler: levelUp))
                 present(ac, animated: true)
             }
+        } else {
+            score -= 1
+            clearTapped()
+            let ac = UIAlertController(title: "Wrong Guess", message: nil, preferredStyle: .alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .default))
+            present(ac, animated: true)
         }
     }
     
     @IBAction func clearTapped() {
-        currentAnswer.text = ""
-        for btn in activatedButtons {
-            btn.isHidden = false
-        }
-        activatedButtons.removeAll()
+        resetButtons()
     }
     
     func letterTapped(button: UIButton) {
@@ -116,6 +118,14 @@ class ViewController: UIViewController {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
         }
+    }
+    
+    func resetButtons() {
+        currentAnswer.text = ""
+        for btn in activatedButtons {
+            btn.isHidden = false
+        }
+        activatedButtons.removeAll()
     }
     
     func levelUp(action: UIAlertAction!) {
