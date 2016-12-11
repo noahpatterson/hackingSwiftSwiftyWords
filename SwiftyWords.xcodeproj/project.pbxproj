@@ -13,6 +13,7 @@
 		5A19250F1DFD8F6A004CE296 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5A19250E1DFD8F6A004CE296 /* Assets.xcassets */; };
 		5A1925121DFD8F6A004CE296 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A1925101DFD8F6A004CE296 /* LaunchScreen.storyboard */; };
 		5A19251A1DFD98C5004CE296 /* level1.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A1925191DFD98C5004CE296 /* level1.txt */; };
+		5A19251C1DFDA60A004CE296 /* level2.txt in Resources */ = {isa = PBXBuildFile; fileRef = 5A19251B1DFDA60A004CE296 /* level2.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		5A1925111DFD8F6A004CE296 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5A1925131DFD8F6A004CE296 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5A1925191DFD98C5004CE296 /* level1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level1.txt; sourceTree = "<group>"; };
+		5A19251B1DFDA60A004CE296 /* level2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = level2.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				5A1925091DFD8F6A004CE296 /* ViewController.swift */,
 				5A19250B1DFD8F6A004CE296 /* Main.storyboard */,
 				5A1925191DFD98C5004CE296 /* level1.txt */,
+				5A19251B1DFDA60A004CE296 /* level2.txt */,
 				5A19250E1DFD8F6A004CE296 /* Assets.xcassets */,
 				5A1925101DFD8F6A004CE296 /* LaunchScreen.storyboard */,
 				5A1925131DFD8F6A004CE296 /* Info.plist */,
@@ -127,6 +130,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A19251C1DFDA60A004CE296 /* level2.txt in Resources */,
 				5A1925121DFD8F6A004CE296 /* LaunchScreen.storyboard in Resources */,
 				5A19251A1DFD98C5004CE296 /* level1.txt in Resources */,
 				5A19250F1DFD8F6A004CE296 /* Assets.xcassets in Resources */,

@@ -12,9 +12,13 @@ import GameplayKit
 class ViewController: UIViewController {
     var letterButtons    = [UIButton]()
     var activatedButtons = [UIButton]()
-    var solutions     = [String]()
+    var solutions        = [String]()
     
-    var score = 0
+    var score: Int = 0 {
+        didSet {
+            scoreLabel.text = "Score: \(score)"
+        }
+    }
     var level = 1
 
     @IBOutlet weak var cluesLabel: UILabel!
@@ -23,13 +27,36 @@ class ViewController: UIViewController {
     @IBOutlet weak var scoreLabel: UILabel!
     
     @IBAction func submitTapped() {
+        let answerPosition = solutions.index(of: currentAnswer.text!)
+        if let pos = answerPosition {
+            activatedButtons.removeAll()
+            var splitClues = answersLabel.text!.components(separatedBy: "\n")
+            splitClues[pos] = currentAnswer.text!
+            answersLabel.text = splitClues.joined(separator: "\n")
+            
+            currentAnswer.text = ""
+            score += 1
+            
+            if score % 7 == 0 {
+                let ac = UIAlertController(title: "Well done!", message: "Are you ready to go to the next level?", preferredStyle: .alert)
+                ac.addAction(UIAlertAction(title: "Let's Go!", style: .default, handler: levelUp))
+                present(ac, animated: true)
+            }
+        }
     }
     
     @IBAction func clearTapped() {
+        currentAnswer.text = ""
+        for btn in activatedButtons {
+            btn.isHidden = false
+        }
+        activatedButtons.removeAll()
     }
     
     func letterTapped(button: UIButton) {
-        
+        currentAnswer.text = currentAnswer.text! + button.titleLabel!.text!
+        activatedButtons.append(button)
+        button.isHidden = true
     }
     
     override func viewDidLoad() {
@@ -88,6 +115,17 @@ class ViewController: UIViewController {
             for i in 0..<letterBits.count {
                 letterButtons[i].setTitle(letterBits[i], for: .normal)
             }
+        }
+    }
+    
+    func levelUp(action: UIAlertAction!) {
+        level += 1
+        solutions.removeAll(keepingCapacity: true)
+        
+        loadLevel()
+        
+        for btn in activatedButtons {
+            btn.isHidden = false
         }
     }
 
